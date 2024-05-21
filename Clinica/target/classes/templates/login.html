@@ -5,7 +5,7 @@
     <title>Login</title>
 </head>
 <body>
-    <h1 style="">Login</h1>
+    <h1>Login</h1>
     <form th:action="@{/login}" method="post">
         <div th:if="${erro}" th:text="${erro}" style="color: red;"></div>
         <label for="username">Usuário:</label>

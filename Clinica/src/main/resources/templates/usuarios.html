@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Usuários</title>
-    <link rel="stylesheet" type="text/css" href="css/usuarios.css"/>
+    <link rel="stylesheet" th:href="@{/usuarios.css}"/>
 </head>
 <body>
-    <div>
-        <div>
+    <div class="card">
+        <div class="teste">
             <h1>Adicionar novo usuário</h1>
             <form method="post" th:action="@{/usuarios/save}">
                 <label>Nome: <input type="text" name="nome"/></label><br><br>
