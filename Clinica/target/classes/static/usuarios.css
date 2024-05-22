@@ -1,13 +1,71 @@
 body {
     font-family: Arial;
     background-color: #f6f6f6;
+    display: flex;
+    justify-content: center;
 }
 
 .card {
     display: flex;
     align-items: center;
     flex-direction: column;
-    border: 1px solid;
-    box-shadow: ;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 6px #8f8f8f;
+    width: fit-content;
+    padding:  0 1.5rem 1.5rem 1.5rem;
+    margin-top: 1rem;
 }
 
+.div-form {
+    width: 100%;
+}
+
+.label {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    font-weight: bolder;
+}
+
+.label-2 {
+    display: flex;
+    gap: 10px;
+    font-weight: bolder;
+}
+
+.input {
+    width: 90%;
+    height: 1.2rem;
+}
+
+.botao {
+    display: flex;
+    justify-content: end;
+}
+
+button {
+    font-size: 15px;
+    font-weight: bolder;
+    width: 80px;
+    height: 28px;
+    background-color: #9cd795;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #6ebe65;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-radius: 6px;
+    box-shadow: 0 0 3px #8f8f8f;
+    padding: 10px;
+
+    th, td {
+        padding: 0 60px 0 0;
+    }
+}
