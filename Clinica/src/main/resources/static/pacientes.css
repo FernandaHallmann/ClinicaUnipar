@@ -33,35 +33,11 @@ h1 {
 }
 
 .input {
-    width: 90%;
+    width: 75%;
     padding: 8px;
     margin-left: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-}
-
-.label-2 {
-    display: flex;
-    align-items: center;
-    font-weight: bold;
-
-    input {
-        margin-left: 10px;
-        -webkit-appearance: none;
-        border: 1px solid #ccc;
-        border-radius: 10%;
-        width: 18px;
-        height: 18px;
-    }
-
-    input:checked {
-        background-color: #007bff;
-        border-color: #007bff;
-    }
-
-    input:hover {
-        cursor: pointer
-    }
 }
 
 .botao {

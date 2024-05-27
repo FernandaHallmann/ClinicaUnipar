@@ -17,21 +17,9 @@ public class LoginWebController {
     this.usuarioService = usuarioService;
   }
 
-  @GetMapping("/hello-world")
-  public String helloWorld(
-          @RequestParam(value = "name", defaultValue = "World") String name
-  ) {
-    return "Hello " + name + "!";
-  }
-
   @GetMapping("/login")
   public String loginForm() {
     return "login";
-  }
-
-  @GetMapping("/bemvindo")
-  public String bemvindo() {
-    return "bemvindo";
   }
 
   @PostMapping("/login")
@@ -42,8 +30,9 @@ public class LoginWebController {
           Model model
   ) {
     Usuario usuario = usuarioService.validarUsuario(username, password);
-    if (username.equals("fernandinha") && password.equals("bart2004")) {
-      session.setAttribute("usuarioLogado", username);
+    if (usuario != null) {
+      session.setAttribute("usuarioLogadoUsername", username);
+      session.setAttribute("usuarioLogadoSenha", password);
       return "redirect:/bemvindo";
     } else {
       model.addAttribute("erro", "Usuário ou senha inválidos");

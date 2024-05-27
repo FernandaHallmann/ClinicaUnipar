@@ -25,4 +25,9 @@ public class UsuarioService {
   public Usuario validarUsuario(String login, String senha) {
     return this.usuarioRepository.findByLoginAndSenha(login, senha);
   }
+
+  public boolean isAdmin(String username, String senha) {
+    Usuario usuario = usuarioRepository.findByLoginAndSenha(username, senha);
+    return usuario != null && usuario.getAdmin();
+  }
 }

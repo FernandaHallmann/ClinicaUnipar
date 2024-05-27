@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Bem-Vindo</title>
+    <link rel="stylesheet" th:href="@{/bemvindo.css}"/>
 </head>
 <body>
-    <h1 th:text="'Bem-Vindo, ' + ${session.usuarioLogado} + '!'"></h1>
+    <form class="card" method="post" th:action="@{/bemvindo}">
+        <button type="submit" name="button" value="usuarios">Usuários</button>
+        <button type="submit" name="button" value="medicos">Médicos</button>
+        <button type="submit" name="button" value="pacientes">Pacientes</button>
+        <button th:attr="disabled=${not isAdmin}" type="submit" name="button" value="atendimentos">Atendimentos</button>
+    </form>
 </body>
 </html>

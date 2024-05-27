@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Médicos</title>
+    <link rel="stylesheet" th:href="@{/medicos.css}"/>
+</head>
+<body>
+    <div class="card">
+        <div class="div-form">
+            <h1>Adicionar novo médico</h1>
+            <form method="post" th:action="@{/medicos/save}">
+                <label class="label">Nome: <input class="input" type="text" name="nome"/></label><br><br>
+                <label class="label">Especialidade: <input class="input" type="text" name="especialidade"/></label><br><br>
+                <div class="botao">
+                    <button type="submit">Salvar</button>
+                </div>
+            </form>
+        </div>
+
+        <div>
+            <h1>Listar Médicos</h1>
+            <table>
+                <thead>
+                <tr>
+                    <th class="coluna-nome">ID</th>
+                    <th class="coluna-nome">Nome</th>
+                    <th class="coluna-nome">Especialidade</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="paciente : ${medicos}">
+                    <td th:text="${paciente.id}"></td>
+                    <td th:text="${paciente.nome}"></td>
+                    <td th:text="${paciente.especialidade}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Atendimento</title>
+    <link rel="stylesheet" th:href="@{/atendimentos.css}"/>
+</head>
+<body>
+    <div class="card">
+        <div class="div-form">
+            <h1>Adicionar atendimento</h1>
+            <form method="post" th:action="@{/atendimentos/save}">
+                <label class="label">Hora: <input class="input" type="datetime-local" name="data_hora"/></label><br><br>
+                <label class="label">Anamnese: <input class="input" type="text" name="anamnese"/></label><br><br>
+                <label class="label">Médico:
+                    <select class="input" name="medico">
+                        <option th:each="medico : ${medicos}" th:value="${medico.id}" th:text="${medico.nome}"></option>
+                    </select>
+                </label><br><br>
+                <label class="label">Paciente:
+                    <select class="input" name="paciente">
+                        <option th:each="paciente : ${pacientes}" th:value="${paciente.id}" th:text="${paciente.nome}"></option>
+                    </select>
+                </label><br><br>
+                <div class="botao">
+                    <button type="submit">Salvar</button>
+                </div>
+            </form>
+        </div>
+
+        <div>
+            <h1>Listar Atendimentos</h1>
+            <table>
+                <thead>
+                <tr>
+                    <th class="coluna-nome">ID</th>
+                    <th class="coluna-nome">Hora</th>
+                    <th class="coluna-nome">Anamnese</th>
+                    <th class="coluna-nome">Médico</th>
+                    <th class="coluna-nome">Paciente</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="atendimento : ${atendimentos}">
+                    <td th:text="${atendimento.hora}"></td>
+                    <td th:text="${atendimento.anamnese}"></td>
+                    <td th:text="${atendimento.medico.id}"></td>
+                    <td th:text="${atendimento.paciente.id}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

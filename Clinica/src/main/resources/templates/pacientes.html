@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pacientes</title>
+    <link rel="stylesheet" th:href="@{/pacientes.css}"/>
+</head>
+<body>
+    <div class="card">
+        <div class="div-form">
+            <h1>Adicionar novo paciente</h1>
+            <form method="post" th:action="@{/pacientes/save}">
+                <label class="label">Nome: <input class="input" type="text" name="nome"/></label><br><br>
+                <label class="label">Telefone: <input class="input" type="text" name="telefone"/></label><br><br>
+                <label class="label">Data Nascimento: <input class="input" type="date" name="data_nascimento"/></label><br><br>
+                <label class="label">Plano: <input class="input" type="text" name="plano"/></label><br><br>
+                <div class="botao">
+                    <button type="submit">Salvar</button>
+                </div>
+            </form>
+        </div>
+
+        <div>
+            <h1>Listar Pacientes</h1>
+            <table>
+                <thead>
+                <tr>
+                    <th class="coluna-nome">ID</th>
+                    <th class="coluna-nome">Nome</th>
+                    <th class="coluna-nome">Telefone</th>
+                    <th class="coluna-nome">Data Nascimento</th>
+                    <th class="coluna-nome">Plano</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="paciente : ${pacientes}">
+                    <td th:text="${paciente.id}"></td>
+                    <td th:text="${paciente.nome}"></td>
+                    <td th:text="${paciente.telefone}"></td>
+                    <td th:text="${paciente.data_nascimento}"></td>
+                    <td th:text="${paciente.plano}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

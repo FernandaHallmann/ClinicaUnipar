@@ -1,42 +1,67 @@
 body {
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     background-color: #f6f6f6;
-    display: flex;
-    justify-content: center;
+    margin: 0;
+    padding: 0;
 }
 
 .card {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
     background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 6px #8f8f8f;
-    width: fit-content;
-    padding:  0 1.5rem 1.5rem 1.5rem;
-    margin-top: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
 }
 
 .div-form {
-    width: 100%;
+    margin-bottom: 40px;
 }
 
 .label {
     display: flex;
-    gap: 10px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    align-items: center;
     justify-content: space-between;
-    font-weight: bolder;
-}
-
-.label-2 {
-    display: flex;
-    gap: 10px;
-    font-weight: bolder;
 }
 
 .input {
     width: 90%;
-    height: 1.2rem;
+    padding: 8px;
+    margin-left: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.label-2 {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+
+    input {
+        margin-left: 10px;
+        -webkit-appearance: none;
+        border: 1px solid #ccc;
+        border-radius: 10%;
+        width: 18px;
+        height: 18px;
+    }
+
+    input:checked {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    input:hover {
+        cursor: pointer
+    }
 }
 
 .botao {
@@ -45,27 +70,41 @@ body {
 }
 
 button {
-    font-size: 15px;
-    font-weight: bolder;
-    width: 80px;
-    height: 28px;
-    background-color: #9cd795;
+    background-color: #007bff;
+    color: white;
     border: none;
-    border-radius: 5px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 button:hover {
-    background-color: #6ebe65;
-    cursor: pointer;
+    background-color: #0056b3;
 }
 
 table {
     width: 100%;
-    border-radius: 6px;
-    box-shadow: 0 0 3px #8f8f8f;
-    padding: 10px;
-
-    th, td {
-        padding: 0 60px 0 0;
-    }
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
 }
+
+thead {
+    background-color: #007bff;
+    color: white;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th.coluna-nome {
+    width: 20%;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
